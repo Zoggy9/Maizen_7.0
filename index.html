@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Maizen Dev | Login</title>
+<title>Multi-Redirect Password Interface</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -20,21 +20,16 @@
         width: 300px;
         text-align: center;
     }
-    input {
+    input, button {
         width: 100%;
         padding: 10px;
         margin: 10px 0;
         border-radius: 5px;
-        border: 1px solid #aaa;
     }
     button {
-        width: 100%;
-        padding: 10px;
         border: none;
         background: #007bff;
         color: white;
-        font-size: 16px;
-        border-radius: 5px;
         cursor: pointer;
     }
     button:hover {
@@ -46,21 +41,23 @@
 <body>
 <div class="box">
     <h2>Login</h2>
-    <h5>Welcome to Maizen. The password can be recieved only by ordering a ZenShirts Shirt.</h5>
     <input type="password" id="password" placeholder="Enter password">
     <button onclick="checkPassword()">Submit</button>
 </div>
 
 <script>
-    const correctPassword = "253537";   // change this
-    const redirectURL = "/Maizen.html";        // change this
+    const routes = {
+        "253537": "https://maizen-6-5.vercel.app/Maizen.html",       // password "pass1" → page1
+        "secret": "page2.html",      // password "secret" → page2
+        "admin123": "admin.html"     // you can add more!
+    };
 
     function checkPassword() {
-        const userInput = document.getElementById("password").value;
+        const input = document.getElementById("password").value;
 
-        if (userInput === correctPassword) {
-            // instant redirect
-            window.location.href = redirectURL;
+        if (routes[input]) {
+            // instant redirect to the corresponding page
+            window.location.href = routes[input];
         } else {
             alert("Incorrect password.");
         }
