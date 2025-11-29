@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Multi-Redirect Password Interface</title>
+<title>Maizen | Login</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -40,7 +40,8 @@
 
 <body>
 <div class="box">
-    <h2>Login</h2>
+    <h2>Password</h2>
+    <h5>Welcome to Maizen. Enter a password to continue.</h5>
     <input type="password" id="password" placeholder="Enter password">
     <button onclick="checkPassword()">Submit</button>
 </div>
@@ -49,6 +50,7 @@
     const routes = {
         "253537": "https://maizen-6-5.vercel.app/Maizen.html",       // password "pass1" → page1
         "Student": "README.md",      // password "secret" → page2     // you can add more!
+        "735352": "https://maizen-6-7.vercel.app/Maizen.html"
     };
 
     function checkPassword() {
