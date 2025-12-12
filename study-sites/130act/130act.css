@@ -68,8 +68,8 @@ iframe {
 
 .maizen-button {
   width: 150px;
-  display: block;/* Centers vertically */ /* Important for padding/margins */
-  margin: 0 auto;
+  display: inline-block;/* Centers vertically */ /* Important for padding/margins */
+  padding: 10px 20px;
   background-color: #007bff;
   color: white;
   text-decoration: none;
