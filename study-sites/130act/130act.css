@@ -67,7 +67,10 @@ iframe {
 }
 
 .maizen-button {
-  width: 150px;  /* Important for padding/margins */
+  width: 150px;
+  display: flex; /* Enables CSS flexbox */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */ /* Important for padding/margins */
   margin: 0 auto;
   padding: 10px 20px;
   background-color: #007bff;
