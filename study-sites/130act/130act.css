@@ -67,8 +67,7 @@ iframe {
 }
 
 .maizen-button {
-  display: block;
-  padding: 20px 20px;
+  padding: 0 0 0 0;
   background-color: #007bff;
   color: white;
   text-decoration: none;
