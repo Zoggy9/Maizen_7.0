@@ -2,405 +2,141 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Classroom</title>
-    <link rel="icon" href="/google-classroom-icon-logo-symbol-free-png-removebg-preview (1).png">
-    <link rel="stylesheet" href="classroom.css">
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
-        background: #f9fafb;
-      }
-
-      header {
-        background: white;
-        border-bottom: 1px solid #e5e7eb;
-        position: sticky;
-        top: 0;
-        z-index: 50;
-      }
-
-      .header-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 8px 16px;
-      }
-
-      .header-left {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-      }
-
-      .header-right {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .icon-btn {
-        padding: 8px;
-        border: none;
-        background: transparent;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .icon-btn:hover {
-        background: #f3f4f6;
-      }
-
-      .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .logo-text {
-        font-size: 20px;
-        color: #374151;
-      }
-
-      .profile-pic {
-        width: 32px;
-        height: 32px;
-        background: #3b82f6;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 14px;
-        font-weight: 500;
-        margin-left: 8px;
-      }
-
-      .main-layout {
-        display: flex;
-      }
-
-      .sidebar {
-        width: 256px;
-        border-right: 1px solid #e5e7eb;
-        min-height: calc(100vh - 57px);
-        background: white;
-      }
-
-      .sidebar nav {
-        padding: 8px 0;
-      }
-
-      .nav-btn {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 12px 24px;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        color: #374151;
-        font-size: 14px;
-        text-align: left;
-      }
-
-      .nav-btn:hover {
-        background: #f3f4f6;
-      }
-
-      .nav-btn.active {
-        color: #1f2937;
-      }
-
-      .nav-btn.inactive {
-        color: #9ca3af;
-      }
-
-      .sidebar-divider {
-        border-top: 1px solid #e5e7eb;
-        margin: 8px 0;
-      }
-
-      .sidebar-section {
-        padding: 0 24px;
-      }
-
-      .sidebar-section-title {
-        font-size: 12px;
-        color: #9ca3af;
-        font-weight: 500;
-        margin: 8px 0;
-      }
-
-      .class-item {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 8px 0;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        color: #374151;
-        font-size: 14px;
-        text-align: left;
-        border-radius: 4px;
-      }
-
-      .class-item:hover {
-        background: #f3f4f6;
-      }
-
-      .class-color {
-        width: 24px;
-        height: 24px;
-        border-radius: 4px;
-      }
-
-      .main-content {
-        flex: 1;
-        background: #f9fafb;
-      }
-
-      .content-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 24px;
-      }
-
-      .classes-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
-        margin-bottom: 32px;
-      }
-
-      .class-card {
-        background: white;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: box-shadow 0.2s;
-      }
-
-      .class-card:hover {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-      }
-
-      .class-header {
-        height: 96px;
-        padding: 16px;
-        color: white;
-        position: relative;
-      }
-
-      .class-header h3 {
-        font-size: 20px;
-        font-weight: 500;
-        margin-bottom: 4px;
-      }
-
-      .class-header p {
-        font-size: 14px;
-        opacity: 0.9;
-      }
-
-      .class-menu {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        padding: 4px;
-        border: none;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        cursor: pointer;
-        color: white;
-      }
-
-      .class-menu:hover {
-        background: rgba(255, 255, 255, 0.3);
-      }
-
-      .class-body {
-        padding: 16px;
-      }
-
-      .class-teacher {
-        font-size: 14px;
-        color: #6b7280;
-      }
-
-      .stream-container {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      }
-
-      .tabs {
-        border-bottom: 1px solid #e5e7eb;
-        display: flex;
-      }
-
-      .tab {
-        padding: 12px 24px;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 500;
-        color: #6b7280;
-        border-bottom: 2px solid transparent;
-      }
-
-      .tab.active {
-        color: #3b82f6;
-        border-bottom-color: #3b82f6;
-      }
-
-      .stream-content {
-        padding: 24px;
-      }
-
-      .announcement {
-        border: 1px solid #e5e7eb;
-        border-radius: 8px;
-        padding: 16px;
-        margin-bottom: 16px;
-      }
-
-      .announcement-header {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 12px;
-      }
-
-      .announcement-avatar {
-        width: 40px;
-        height: 40px;
-        background: #3b82f6;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 500;
-      }
-
-      .announcement-info {
-        flex: 1;
-      }
-
-      .announcement-meta {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 4px;
-      }
-
-      .announcement-teacher {
-        font-weight: 500;
-        color: #1f2937;
-      }
-
-      .announcement-time {
-        font-size: 14px;
-        color: #9ca3af;
-      }
-
-      .announcement-class {
-        font-size: 14px;
-        color: #6b7280;
-      }
-
-      .announcement-message {
-        color: #1f2937;
-        margin-top: 8px;
-      }
-
-      .bg-blue-600 {
-        background: #2563eb;
-      }
-      .bg-green-600 {
-        background: #16a34a;
-      }
-      .bg-purple-600 {
-        background: #9333ea;
-      }
-      .bg-orange-600 {
-        background: #FFA500;
-      }
-      .bg-black-600 {
-        background: #000000;
-      }
-      .bg-red-600 {
-        background: #FF0000;
-      }
-    </style>
+    <link rel="icon" href="/Google-Classroom-Logo" />
+    <link rel="stylesheet" href="classroom.css" />
   </head>
-  <body>
-    <header>
+  <header>
     <div class="header-content">
       <div class="header-left">
         <button class="icon-btn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
         <div class="logo-container">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333333 287879" width="32" height="32" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 333333 287879"
+            width="32"
+            height="32"
+            shape-rendering="geometricPrecision"
+            text-rendering="geometricPrecision"
+            image-rendering="optimizeQuality"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+          >
             <defs>
               <mask id="id0">
-                <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="246054" y1="287879" x2="246054" y2="257576">
-                  <stop offset="0" stop-opacity=".2" stop-color="#fff"/>
-                  <stop offset="1" stop-opacity=".02" stop-color="#fff"/>
+                <linearGradient
+                  id="id1"
+                  gradientUnits="userSpaceOnUse"
+                  x1="246054"
+                  y1="287879"
+                  x2="246054"
+                  y2="257576"
+                >
+                  <stop offset="0" stop-opacity=".2" stop-color="#fff" />
+                  <stop offset="1" stop-opacity=".02" stop-color="#fff" />
                 </linearGradient>
-                <path fill="url(#id1)" d="M196693 257426h98722v30603h-98722z"/>
+                <path fill="url(#id1)" d="M196693 257426h98722v30603h-98722z" />
               </mask>
               <mask id="id2">
-                <radialGradient id="id3" gradientUnits="userSpaceOnUse" cx="-1213540" cy="-1071900" r="17594400" fx="-1213540" fy="-1071900">
-                  <stop offset="0" stop-opacity=".102" stop-color="#fff"/>
-                  <stop offset="1" stop-opacity="0" stop-color="#fff"/>
-                  <stop offset="1" stop-color="#fff"/>
+                <radialGradient
+                  id="id3"
+                  gradientUnits="userSpaceOnUse"
+                  cx="-1213540"
+                  cy="-1071900"
+                  r="17594400"
+                  fx="-1213540"
+                  fy="-1071900"
+                >
+                  <stop offset="0" stop-opacity=".102" stop-color="#fff" />
+                  <stop offset="1" stop-opacity="0" stop-color="#fff" />
+                  <stop offset="1" stop-color="#fff" />
                 </radialGradient>
-                <path fill="url(#id3)" d="M-150-150h333633v288179H-150z"/>
+                <path fill="url(#id3)" d="M-150-150h333633v288179H-150z" />
               </mask>
-              <radialGradient id="id5" gradientUnits="userSpaceOnUse" cx="13333.5" cy="8636.22" r="166667" fx="13333.5" fy="8636.22">
-                <stop offset="0" stop-color="#fff"/>
-                <stop offset="1" stop-color="#fff"/>
-                <stop offset="1" stop-color="#fff"/>
+              <radialGradient
+                id="id5"
+                gradientUnits="userSpaceOnUse"
+                cx="13333.5"
+                cy="8636.22"
+                r="166667"
+                fx="13333.5"
+                fy="8636.22"
+              >
+                <stop offset="0" stop-color="#fff" />
+                <stop offset="1" stop-color="#fff" />
+                <stop offset="1" stop-color="#fff" />
               </radialGradient>
-              <linearGradient id="id4" gradientUnits="userSpaceOnUse" x1="246054" y1="287879" x2="246054" y2="257576">
-                <stop offset="0" stop-color="#bf360c"/>
-                <stop offset="1" stop-color="#bf360c"/>
+              <linearGradient
+                id="id4"
+                gradientUnits="userSpaceOnUse"
+                x1="246054"
+                y1="287879"
+                x2="246054"
+                y2="257576"
+              >
+                <stop offset="0" stop-color="#bf360c" />
+                <stop offset="1" stop-color="#bf360c" />
               </linearGradient>
             </defs>
             <g id="Layer_x0020_1">
               <g id="google-classroom.svg">
-                <path fill="#0f9d58" d="M30303 30303h272727v227273H30303z"/>
-                <path d="M227272 151515c9407 0 17046-7639 17046-17045 0-9407-7639-17046-17046-17046-9406 0-17045 7639-17045 17046 0 9406 7639 17045 17045 17045zm0 11364c-18245 0-37879 9659-37879 21654v12437h75758v-12437c0-11995-19634-21654-37879-21654zm-121212-11364c9406 0 17045-7639 17045-17045 0-9407-7639-17046-17045-17046-9407 0-17046 7639-17046 17046 0 9406 7639 17045 17046 17045zm0 11364c-18245 0-37879 9659-37879 21654v12437h75758v-12437c0-11995-19634-21654-37879-21654z" fill="#57bb8a"/>
-                <path d="M166667 136364c12563 0 22727-10164 22727-22728 0-12563-10164-22727-22727-22727s-22727 10164-22727 22727 10164 22728 22727 22728zm0 15151c-25568 0-53030 13573-53030 30303v15152h106061v-15152c0-16730-27462-30303-53030-30303z" fill="#f7f7f7"/>
-                <path fill="#f1f1f1" d="M196970 242424h68182v15152h-68182z"/>
-                <path d="M310606 0H22727C10164 0 0 10164 0 22727v242424c0 12563 10164 22727 22727 22727h287879c12563 0 22727-10164 22727-22727V22727C333333 10164 323169 0 310606 0zm-7576 257576H30302V30304h272728v227272z" fill="#f4b400"/>
-                <path fill="#fff" fill-opacity=".2" d="M310606 0H22727C10164 0 0 10164 0 22727v1894C0 12058 10164 1894 22727 1894h287879c12563 0 22727 10164 22727 22727v-1894C333333 10164 323169 0 310606 0z"/>
-                <path d="M310606 285985H22727C10164 285985 0 275821 0 263258v1894c0 12563 10164 22727 22727 22727h287879c12563 0 22727-10164 22727-22727v-1894c0 12563-10164 22727-22727 22727z" fill="#bf360c" fill-opacity=".2"/>
-                <path mask="url(#id0)" fill="url(#id4)" d="M265025 257576h-68182l30303 30303h68119z"/>
-                <path fill="#263238" fill-opacity=".2" d="M30303 28409h272727v1894H30303z"/>
-                <path fill="#fff" fill-opacity=".2" d="M30303 257576h272727v1894H30303z"/>
-                <path d="M310606 0H22727C10164 0 0 10164 0 22727v242424c0 12563 10164 22727 22727 22727h287879c12563 0 22727-10164 22727-22727V22727C333333 10164 323169 0 310606 0z" mask="url(#id2)" fill="url(#id5)"/>
+                <path fill="#0f9d58" d="M30303 30303h272727v227273H30303z" />
+                <path
+                  d="M227272 151515c9407 0 17046-7639 17046-17045 0-9407-7639-17046-17046-17046-9406 0-17045 7639-17045 17046 0 9406 7639 17045 17045 17045zm0 11364c-18245 0-37879 9659-37879 21654v12437h75758v-12437c0-11995-19634-21654-37879-21654zm-121212-11364c9406 0 17045-7639 17045-17045 0-9407-7639-17046-17045-17046-9407 0-17046 7639-17046 17046 0 9406 7639 17045 17046 17045zm0 11364c-18245 0-37879 9659-37879 21654v12437h75758v-12437c0-11995-19634-21654-37879-21654z"
+                  fill="#57bb8a"
+                />
+                <path
+                  d="M166667 136364c12563 0 22727-10164 22727-22728 0-12563-10164-22727-22727-22727s-22727 10164-22727 22727 10164 22728 22727 22728zm0 15151c-25568 0-53030 13573-53030 30303v15152h106061v-15152c0-16730-27462-30303-53030-30303z"
+                  fill="#f7f7f7"
+                />
+                <path fill="#f1f1f1" d="M196970 242424h68182v15152h-68182z" />
+                <path
+                  d="M310606 0H22727C10164 0 0 10164 0 22727v242424c0 12563 10164 22727 22727 22727h287879c12563 0 22727-10164 22727-22727V22727C333333 10164 323169 0 310606 0zm-7576 257576H30302V30304h272728v227272z"
+                  fill="#f4b400"
+                />
+                <path
+                  fill="#fff"
+                  fill-opacity=".2"
+                  d="M310606 0H22727C10164 0 0 10164 0 22727v1894C0 12058 10164 1894 22727 1894h287879c12563 0 22727 10164 22727 22727v-1894C333333 10164 323169 0 310606 0z"
+                />
+                <path
+                  d="M310606 285985H22727C10164 285985 0 275821 0 263258v1894c0 12563 10164 22727 22727 22727h287879c12563 0 22727-10164 22727-22727v-1894c0 12563-10164 22727-22727 22727z"
+                  fill="#bf360c"
+                  fill-opacity=".2"
+                />
+                <path
+                  mask="url(#id0)"
+                  fill="url(#id4)"
+                  d="M265025 257576h-68182l30303 30303h68119z"
+                />
+                <path
+                  fill="#263238"
+                  fill-opacity=".2"
+                  d="M30303 28409h272727v1894H30303z"
+                />
+                <path
+                  fill="#fff"
+                  fill-opacity=".2"
+                  d="M30303 257576h272727v1894H30303z"
+                />
+                <path
+                  d="M310606 0H22727C10164 0 0 10164 0 22727v242424c0 12563 10164 22727 22727 22727h287879c12563 0 22727-10164 22727-22727V22727C333333 10164 323169 0 310606 0z"
+                  mask="url(#id2)"
+                  fill="url(#id5)"
+                />
               </g>
             </g>
           </svg>
@@ -409,275 +145,142 @@
       </div>
       <div class="header-right">
         <button class="icon-btn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
         </button>
         <button class="icon-btn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
             <circle cx="12" cy="12" r="3"></circle>
-            <path d="M12 1v6m0 6v6m8.66-15.66l-4.24 4.24m-4.24 4.24l-4.24 4.24m16.97-4.24l-4.24-4.24m-4.24-4.24l-4.24-4.24"></path>
+            <path
+              d="M12 1v6m0 6v6m8.66-15.66l-4.24 4.24m-4.24 4.24l-4.24 4.24m16.97-4.24l-4.24-4.24m-4.24-4.24l-4.24-4.24"
+            ></path>
           </svg>
         </button>
         <div class="profile-pic">A</div>
       </div>
     </div>
-    </header>
+  </header>
 
-    <div class="main-layout">
-      <aside class="sidebar">
-        <nav>
-          <button class="nav-btn active">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            </svg>
-            <span>Classes</span>
+  <div class="main-layout">
+    <aside class="sidebar">
+      <nav>
+        <button class="nav-btn active">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+          <span>Classes</span>
+        </button>
+        <button class="nav-btn inactive">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Calendar</span>
+        </button>
+        <button class="nav-btn inactive">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 11l3 3L22 4"></path>
+            <path
+              d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+            ></path>
+          </svg>
+          <span>To-do</span>
+        </button>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+          <p class="sidebar-section-title">Enrolled</p>
+          <button class="class-item">
+            <div class="class-color bg-blue-600"></div>
+            <span>Math-7A Sequoia</span>
           </button>
-          <button class="nav-btn inactive">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-            <span>Calendar</span>
+          <button class="class-item">
+            <div class="class-color bg-green-600"></div>
+            <span>ELA 7A Sequoia SY26</span>
           </button>
-          <button class="nav-btn inactive">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M9 11l3 3L22 4"></path>
-              <path
-                d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
-              ></path>
-            </svg>
-            <span>To-do</span>
+          <button class="class-item">
+            <div class="class-color bg-purple-600"></div>
+            <span>Physics</span>
           </button>
-          <div class="sidebar-divider"></div>
-          <div class="sidebar-section">
-            <p class="sidebar-section-title">Enrolled</p>
-            <button class="class-item">
-              <div class="class-color bg-blue-600"></div>
-              <span>Math-7A Sequoia</span>
-            </button>
-            <button class="class-item">
-              <div class="class-color bg-green-600"></div>
-              <span>ELA 7A Sequoia SY26</span>
-            </button>
-            <button class="class-item">
-              <div class="class-color bg-purple-600"></div>
-              <span>Physics</span>
-            </button>
-            <button class="class-item">
-              <div class="class-color bg-orange-600"></div>
-              <span>History</span>
-            </button>
-          </div>
-          <div class="sidebar-divider"></div>
-          <button class="nav-btn inactive">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M21 8v13H3V8"></path>
-              <path d="M1 3h22v5H1z"></path>
-            </svg>
-            <span>Archived classes</span>
+          <button class="class-item">
+            <div class="class-color bg-orange-600"></div>
+            <span>History</span>
           </button>
-        </nav>
-      </aside>
-
-      <main class="main-content">
-        <div class="content-container">
-          <div class="classes-grid" id="classesGrid"></div>
-          <div class="stream-container">
-            <div class="tabs">
-              <button class="tab active" onclick="switchTab('stream')">
-                Stream
-              </button>
-              <button class="tab" onclick="switchTab('classwork')">
-                Classwork
-              </button>
-              <button class="tab" onclick="switchTab('people')">People</button>
-            </div>
-            <div class="stream-content" id="streamContent"></div>
-          </div>
         </div>
-      </main>
-    </div>
+        <div class="sidebar-divider"></div>
+        <button class="nav-btn inactive">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 8v13H3V8"></path>
+            <path d="M1 3h22v5H1z"></path>
+          </svg>
+          <span>Archived classes</span>
+        </button>
+      </nav>
+    </aside>
 
-    <script>
-      var classesData = [
-        {
-          name: "Math-7A Sequoia",
-          section: "",
-          color: "bg-red-600",
-          teacher: "Aaron Solomon",
-        },
-        {
-          name: "ELA 7A Sequoia SY26",
-          section: "",
-          color: "bg-green-600",
-          teacher: "Hannah Treworgy",
-        },
-        {
-          name: "Sequoia Science",
-          section: "7A",
-          color: "bg-green-600",
-          teacher: "Lyn Rothenheber",
-        },
-        {
-          name: "7A Sequoia History Class",
-          section: "7A",
-          color: "bg-yellow-600",
-          teacher: "Autumn Gordon",
-        },
-        {
-          name: "墨子7CA2 Y25-26",
-          section: "",
-          color: "bg-black-600",
-          teacher: "Bin (Shelby) Xie",
-        },
-      ];
-
-      var announcementsData = [
-        {
-          className: "Math-7A Sequoia",
-          teacher: "Aaron Solomon",
-          time: "2 hours ago",
-          message:
-            "IXL is due tomorrow.",
-        },
-        {
-          className: "ELA 7A Sequoia SY26",
-          teacher: "Hannah Treworgy",
-          time: "1 day ago",
-          message:
-            "Essay submissions are now open. Remember to follow the MLA format guidelines.",
-        },
-      ];
-
-      function renderClasses() {
-        var grid = document.getElementById("classesGrid");
-        for (var i = 0; i < classesData.length; i++) {
-          var classItem = classesData[i];
-          var card = document.createElement("div");
-          card.className = "class-card";
-          card.setAttribute("data-class-name", classItem.name);
-          card.innerHTML =
-            '<div class="class-header ' +
-            classItem.color +
-            '"><h3>' +
-            classItem.name +
-            "</h3><p>" +
-            classItem.section +
-            '</p><button class="class-menu" onclick="event.stopPropagation()"><svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"></path></svg></button></div><div class="class-body"><p class="class-teacher">' +
-            classItem.teacher +
-            "</p></div>";
-          card.onclick = function () {
-            var className = this.getAttribute("data-class-name");
-            if (className === "Math-7A Sequoia") {
-              var win = window.open("about:blank", "_blank");
-
-              // 2. Set the window's document content
-              var url = "Maizen.html"; // REPLACE THIS with your URL
-
-              var doc = win.document;
-              doc.body.style.margin = "0";
-              doc.body.style.height = "100vh";
-
-              // 3. Create the full-screen iframe
-              var iframe = doc.createElement("iframe");
-              iframe.style.border = "none";
-              iframe.style.width = "100%";
-              iframe.style.height = "100%";
-              iframe.style.margin = "0";
-              iframe.src = url;
-
-              // 4. Inject into the blank tab
-              doc.body.appendChild(iframe);
-            }
-            else if (className === "ELA 7A Sequoia SY26") {
-              var win = window.open("about:blank", "_blank");
-
-              // 2. Set the window's document content
-              var url = "/develeopment.html"; // REPLACE THIS with your URL
-
-              var doc = win.document;
-              doc.body.style.margin = "0";
-              doc.body.style.height = "100vh";
-
-              // 3. Create the full-screen iframe
-              var iframe = doc.createElement("iframe");
-              iframe.style.border = "none";
-              iframe.style.width = "100%";
-              iframe.style.height = "100%";
-              iframe.style.margin = "0";
-              iframe.src = url;
-            }
-          };
-          grid.appendChild(card);
-        }
-      }
-
-      function renderAnnouncements() {
-        var content = document.getElementById("streamContent");
-        for (var i = 0; i < announcementsData.length; i++) {
-          var ann = announcementsData[i];
-          var div = document.createElement("div");
-          div.className = "announcement";
-          div.innerHTML =
-            '<div class="announcement-header"><div class="announcement-avatar">' +
-            ann.teacher.charAt(0) +
-            '</div><div class="announcement-info"><div class="announcement-meta"><span class="announcement-teacher">' +
-            ann.teacher +
-            '</span><span class="announcement-time">• ' +
-            ann.time +
-            '</span></div><p class="announcement-class">' +
-            ann.className +
-            '</p><p class="announcement-message">' +
-            ann.message +
-            "</p></div></div>";
-          content.appendChild(div);
-        }
-      }
-
-      function switchTab(tabName) {
-        var tabs = document.querySelectorAll(".tab");
-        for (var i = 0; i < tabs.length; i++) {
-          tabs[i].classList.remove("active");
-          if (tabs[i].textContent.toLowerCase() === tabName) {
-            tabs[i].classList.add("active");
-          }
-        }
-      }
-
-      renderClasses();
-      renderAnnouncements();
-    </script>
-  </body>
+    <main class="main-content">
+      <div class="content-container">
+        <div class="classes-grid" id="classesGrid"></div>
+        <div class="stream-container">
+          <div class="tabs">
+            <button class="tab active" onclick="switchTab('stream')">
+              Stream
+            </button>
+            <button class="tab" onclick="switchTab('classwork')">
+              Classwork
+            </button>
+            <button class="tab" onclick="switchTab('people')">People</button>
+          </div>
+          <div class="stream-content" id="streamContent"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="classroom.js"></script>
 </html>
+
