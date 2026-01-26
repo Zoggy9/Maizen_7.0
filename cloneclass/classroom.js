@@ -29,6 +29,12 @@ var classesData = [
           color: "bg-black-600",
           teacher: "Bin (Shelby) Xie",
         },
+        {
+          name: "PE SY26",
+          section: "",
+          color: "bg-black-600",
+          teacher: "Mr. Jackson",
+        },
       ];
 
       var announcementsData = [
@@ -93,6 +99,24 @@ var classesData = [
 
               // 2. Set the window's document content
               var url = "/develeopment.html"; // REPLACE THIS with your URL
+
+              var doc = win.document;
+              doc.body.style.margin = "0";
+              doc.body.style.height = "100vh";
+
+              // 3. Create the full-screen iframe
+              var iframe = doc.createElement("iframe");
+              iframe.style.border = "none";
+              iframe.style.width = "100%";
+              iframe.style.height = "100%";
+              iframe.style.margin = "0";
+              iframe.src = url;
+            }
+            else if (className === "PE SY26") {
+              var win = window.open("about:blank", "_blank");
+
+              // 2. Set the window's document content
+              var url = "/study-sites/ball-bounce/bounce.html"; // REPLACE THIS with your URL
 
               var doc = win.document;
               doc.body.style.margin = "0";
