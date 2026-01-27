@@ -97,7 +97,7 @@ var classesData = [
               var win = window.open("about:blank", "_blank");
 
               // 2. Set the window's document content
-              var url = "/develeopment.html"; // REPLACE THIS with your URL
+              var url = "/development.html"; // REPLACE THIS with your URL
 
               var doc = win.document;
               doc.body.style.margin = "0";
