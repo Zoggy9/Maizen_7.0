@@ -32,7 +32,7 @@ var classesData = [
         {
           name: "PE SY26",
           section: "",
-          color: "bg-black-600",
+          color: "bg-blue-600",
           teacher: "Mr. Jackson",
         },
       ];
@@ -93,8 +93,7 @@ var classesData = [
 
               // 4. Inject into the blank tab
               doc.body.appendChild(iframe);
-            }
-            else if (className === "ELA 7A Sequoia SY26") {
+            } else if (className === "ELA 7A Sequoia SY26") {
               var win = window.open("about:blank", "_blank");
 
               // 2. Set the window's document content
@@ -111,8 +110,9 @@ var classesData = [
               iframe.style.height = "100%";
               iframe.style.margin = "0";
               iframe.src = url;
-            }
-            else if (className === "PE SY26") {
+                    
+              doc.body.appendChild(iframe);
+            } else if (className === "PE SY26") {
               var win = window.open("about:blank", "_blank");
 
               // 2. Set the window's document content
@@ -129,6 +129,8 @@ var classesData = [
               iframe.style.height = "100%";
               iframe.style.margin = "0";
               iframe.src = url;
+
+              doc.body.appendChild(iframe);  
             }
           };
           grid.appendChild(card);
