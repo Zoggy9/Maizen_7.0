@@ -1,0 +1,340 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #f9fafb;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      padding: 8px;
+      border: none;
+      background: transparent;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-btn:hover {
+      background: #f3f4f6;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      color: #374151;
+    }
+
+    .profile-pic {
+      width: 32px;
+      height: 32px;
+      background: #3b82f6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      margin-left: 8px;
+    }
+
+    .class-banner {
+      height: 240px;
+      background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+      position: relative;
+      color: white;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .class-banner h1 {
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .class-banner p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .banner-menu {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      padding: 8px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .banner-menu:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .tabs {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      padding: 0 24px;
+    }
+
+    .tab {
+      padding: 16px 24px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: #6b7280;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab.active {
+      color: #9333ea;
+      border-bottom-color: #9333ea;
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 24px;
+    }
+
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 16px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-header h2 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #1f2937;
+    }
+
+    .card-body {
+      padding: 16px;
+    }
+
+    .assignment {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      border-bottom: 1px solid #e5e7eb;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .assignment:hover {
+      background: #f9fafb;
+    }
+
+    .assignment:last-child {
+      border-bottom: none;
+    }
+
+    .assignment-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .assignment-icon.homework {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .assignment-icon.quiz {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .assignment-icon.material {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .assignment-content {
+      flex: 1;
+    }
+
+    .assignment-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    .assignment-meta {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .assignment-status {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      align-self: flex-start;
+    }
+
+    .assignment-status.assigned {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .assignment-status.turned-in {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .assignment-status.graded {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .upcoming-work {
+      padding: 16px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .code-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .class-code {
+      font-size: 24px;
+      font-weight: 500;
+      color: #1f2937;
+      letter-spacing: 2px;
+    }
+
+    .teacher-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+    }
+
+    .teacher-avatar {
+      width: 48px;
+      height: 48px;
+      background: #9333ea;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .teacher-info h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1f2937;
+      margin-bottom: 2px;
+    }
+
+    .teacher-info p {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .view-all {
+      padding: 12px 16px;
+      text-align: center;
+      color: #9333ea;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .view-all:hover {
+      background: #f9fafb;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+
+      .right-column {
+        order: -1;
+      }
+    }
