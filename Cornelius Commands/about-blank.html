@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waizender Launcher</title>
+    <style>
+        body {
+            background-color: #0f0f12;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background: #00d4ff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #0099cc;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="launchCloak()">Launch Waizender (Cloaked)</button>
+
+    <script>
+        function launchCloak() {
+            // 1. Open a new empty tab
+            var win = window.open('about:blank', '_blank');
+            
+            // 2. Set the window's document content
+            var url = "index.html"; // REPLACE THIS with your URL
+            
+            var doc = win.document;
+            doc.body.style.margin = '0';
+            doc.body.style.height = '100vh';
+            
+            // 3. Create the full-screen iframe
+            var iframe = doc.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            
+            // 4. Inject into the blank tab
+            doc.body.appendChild(iframe);
+        }
+    </script>
+
+</body>
+</html>
