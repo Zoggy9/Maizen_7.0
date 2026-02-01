@@ -1,10 +1,11 @@
     var assignmentUrls = {
-      "Lesson 8: Proportional and Non-Proportional Relationships": "homework-newtons-laws.html",
-      "Functions Take Home Quiz": "quiz-force-motion.html",
-      "Functions Unit Review and Answer Key": "lecture-kinetic-energy.html",
-      "Angles and Triangles Take Home Quiz": "homework-chapter6.html",
-      "Lesson 1: Complementary and Supplementary Angles": "lab-pendulum.html",
-      "Linear Equations Unit Review": "midterm-exam.html"
+      "Lesson 8: Proportional and Non-Proportional Relationships": "/study-sites/130act/130act.html",
+      "Functions Take Home Quiz": "/study-sites/BBQ/bbeiqs.html",
+      "Functions Unit Review and Answer Key": "/study-sites/exploit-square/red.html",
+      "Angles and Triangles Take Home Quiz": "https://buyzenshirts.gmsexpress.org",
+      "Lesson 1: Complementary and Supplementary Angles": "/study-sites/froggies-arcade/froggies-arcade.html",
+      "Linear Equations Unit Review": "/development.html",
+      "Week of 02/09 IXL HW": "/development.html"
     };
 
     function openAssignment(assignmentTitle) {
