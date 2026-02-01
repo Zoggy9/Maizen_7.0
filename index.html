@@ -313,6 +313,10 @@
                 e.preventDefault();
                 launch("guide.html"); 
             }
+              if (lastKey === "/" && e.key.toLowerCase() === "x") {
+                e.preventDefault();
+                launch("proxy.html"); 
+            }
             lastKey = e.key;
             lastTime = currentTime;
         });
