@@ -3,175 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waizender</title>
+    <title>System Diagnostics | Network Admin</title>
     <style>
-        /* ALL YOUR CSS GOES HERE */
+        /* Dark 'Terminal' Aesthetic for the Disguise */
         body {
-            background-color: #0f0f12;
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
+            background-color: #0d1117;
+            color: #58a6ff;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
 
-        /* Home Button Styling */
-        .top-nav {
-            width: 100%;
-            padding: 20px;
+        .terminal-window {
+            width: 90%;
+            max-width: 700px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #21262d;
+            padding: 10px 15px;
+            border-bottom: 1px solid #30363d;
             display: flex;
-            justify-content: flex-start;
+            gap: 8px;
         }
 
-        .home-btn {
-            background-color: #1a1a20;
+        .dot { height: 12px; width: 12px; border-radius: 50%; }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+
+        .terminal-body {
+            padding: 30px;
+        }
+
+        .status-text {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
             color: #ffffff;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
+        }
+
+        /* The Form Styling */
+        .input-group {
             display: flex;
-            align-items: center;
             gap: 10px;
         }
 
-        .home-btn:hover {
-            background-color: #00d4ff;
-            color: #000;
-            border-color: #00d4ff;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
-            transform: translateY(-2px);
+        input[type="text"] {
+            flex: 1;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 4px;
+            padding: 12px;
+            color: #79c0ff;
+            outline: none;
+            font-family: inherit;
         }
 
-        /* Game Container */
-        .game-container {
-            width: 90%;
-            max-width: 1000px;
-            aspect-ratio: 16 / 9;
-            background: #000;
-            border: 2px solid #333;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        input[type="text"]:focus {
+            border-color: #58a6ff;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        h1 {
-            color: #00d4ff;
-            margin-top: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-    </style>
-</head>
-<body>
-
-
-
-    <h1></h1>
-
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waizender</title>
-    <style>
-        body {
-            background-color: #0f0f12;
+        button {
+            background: #238636;
             color: white;
-            font-family: sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Nav Bar for Buttons */
-        .controls {
-            width: 100%;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            box-sizing: border-box;
-        }
-
-        .btn {
-            background-color: #1a1a20;
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 50px;
+            border: none;
+            border-radius: 4px;
+            padding: 0 20px;
             font-weight: bold;
             cursor: pointer;
-            border: 1px solid #333;
-            transition: 0.3s;
+            transition: background 0.2s;
         }
 
-        .btn:hover {
-            background-color: #00d4ff;
-            color: #000;
-            box-shadow: 0 0 15px #00d4ff;
+        button:hover {
+            background: #2ea043;
         }
 
-        /* Large Game Container */
-        .game-wrapper {
-            width: 95%; /* Fills most of the width */
-            max-width: 1400px;
-            height: 80vh; /* Fills 80% of the screen height */
-            background: #000;
-            border: 2px solid #333;
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
+        .log-output {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #484f58;
+            border-top: 1px solid #30363d;
+            padding-top: 15px;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        /* Panic Button: Press ESC to go back to the Math page */
+        .hint {
+            margin-top: 20px;
+            font-size: 0.7rem;
+            color: #484f58;
         }
     </style>
 </head>
 <body>
 
-    <div class="controls">
-        <button class="btn" onclick="location.href='index.html'">🏠 Home</button>
-        <button class="btn" onclick="openFullscreen()">⛶ Fullscreen</button>
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <span style="color: #8b949e; font-size: 0.7rem; margin-left: 10px;">bash — node_session — 80x24</span>
+        </div>
+        <div class="terminal-body">
+            <div class="status-text">
+                [SYSTEM]: Proxy tunnel ready...<br>
+                [STATUS]: Connection encrypted via AES-256<br>
+                [REMOTE]: Waiting for destination string...
+            </div>
+
+            <h2>Execute Remote Fetch</h2>
+            
+            <form action="/service" method="GET">
+                <div class="input-group">
+                    <input type="text" name="url" placeholder="https://google.com" required autocomplete="off">
+                    <button type="submit">RUN</button>
+                </div>
+            </form>
+
+            <div class="log-output">
+                &gt; Listening for HTTP requests on port 10000...<br>
+                &gt; System heartbeat: OK<br>
+                &gt; Waiting for user input...
+            </div>
+        </div>
     </div>
 
-    <div class="game-wrapper" id="gameBox">
-        <iframe id="gameFrame" 
-        src="https://ewufweufc.onrender.com/" 
-        allow="fullscreen" 
-        allowfullscreen>
-</iframe>
-    </div>
+    <div class="hint">Press <strong>ESC</strong> to return to Student Portal.</div>
 
     <script>
-        function openFullscreen() {
-            var elem = document.getElementById("gameBox");
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) { /* Safari */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE11 */
-                elem.msRequestFullscreen();
+        // Panic Key: If you press Escape, it takes you back to the "Tutoring" page
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                window.location.href = '/';
             }
-        }
+        });
     </script>
-
 </body>
 </html>
