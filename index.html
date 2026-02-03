@@ -1,152 +1,380 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <title>Home - Classroom</title>
-    <link rel="icon" href="/Google_Classroom_Logo.png" />
-    <link rel="stylesheet" href="/cloneclass/classroom.css" />
-    <style>
-        /* --- SYSTEM CSS (CRITICAL) --- */
-        #game-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: black;
-            z-index: 999999;
-        }
-        #game-frame { width: 100%; height: 100%; border: none; }
-        .hidden { display: none !important; }
-        
-        #panic-corner {
-            position: fixed;
-            top: 0; left: 0;
-            width: 15px; height: 15px;
-            z-index: 1000000;
-            cursor: pointer;
-            background: transparent;
-        }
-
-        /* Logic for the secondary UI (XL-Learning) */
-        #ui-wrapper { display: none; } 
-    </style>
 </head>
-<body>
-
-    <div id="panic-corner" onclick="exitToHome()"></div>
-
-    <div id="classroom-ui">
-        <header>
-            <div class="header-content">
-                <div class="header-left" style="display: flex; align-items: center; gap: 10px; padding: 10px;">
-                    <div class="logo-container" style="display: flex; align-items: center; gap: 8px;">
-                        <img src="/Google_Classroom_Logo.png" width="32" height="32" alt="Logo">
-                        <span class="logo-text" style="font-size: 22px; color: #5f6368; font-family: 'Product Sans', Arial;">Classroom</span>
-                    </div>
-                </div>
-                <div class="header-right" style="padding: 10px;">
-                    <div class="profile-pic" style="width: 32px; height: 32px; background: #039be5; color: white; border-radius: 50%; text-align: center; line-height: 32px;">A</div>
-                </div>
-            </div>
-        </header>
-
-        <div class="main-layout" style="display: flex;">
-            <aside class="sidebar" style="width: 240px; padding: 20px;">
-                <nav>
-                    <div style="color: #1967d2; background: #e8f0fe; padding: 10px; border-radius: 0 20px 20px 0; font-weight: bold;">Classes</div>
-                    <div style="padding: 10px; color: #5f6368;">Calendar</div>
-                </nav>
-            </aside>
-
-            <main class="main-content" style="flex-grow: 1; padding: 20px;">
-                <div class="classes-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
-                    <div style="border: 1px solid #dadce0; border-radius: 8px; overflow: hidden;">
-                        <div style="background: #1967d2; padding: 20px; color: white;">
-                            <h2 style="margin: 0;">Math-7A Sequoia</h2>
-                            <p style="margin: 0; font-size: 14px;">Period 1</p>
-                        </div>
-                        <div style="height: 100px; background: white;"></div>
-                    </div>
-                </div>
-            </main>
+  <header>
+    <div class="header-content">
+      <div class="header-left">
+        <button class="icon-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="logo-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 333333 287879"
+            width="32"
+            height="32"
+            shape-rendering="geometricPrecision"
+            text-rendering="geometricPrecision"
+            image-rendering="optimizeQuality"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+          >
+            <defs>
+              <mask id="id0">
+                <linearGradient
+                  id="id1"
+                  gradientUnits="userSpaceOnUse"
+                  x1="246054"
+                  y1="287879"
+                  x2="246054"
+                  y2="257576"
+                >
+                  <stop offset="0" stop-opacity=".2" stop-color="#fff" />
+                  <stop offset="1" stop-opacity=".02" stop-color="#fff" />
+                </linearGradient>
+                <path fill="url(#id1)" d="M196693 257426h98722v30603h-98722z" />
+              </mask>
+              <mask id="id2">
+                <radialGradient
+                  id="id3"
+                  gradientUnits="userSpaceOnUse"
+                  cx="-1213540"
+                  cy="-1071900"
+                  r="17594400"
+                  fx="-1213540"
+                  fy="-1071900"
+                >
+                  <stop offset="0" stop-opacity=".102" stop-color="#fff" />
+                  <stop offset="1" stop-opacity="0" stop-color="#fff" />
+                  <stop offset="1" stop-color="#fff" />
+                </radialGradient>
+                <path fill="url(#id3)" d="M-150-150h333633v288179H-150z" />
+              </mask>
+              <radialGradient
+                id="id5"
+                gradientUnits="userSpaceOnUse"
+                cx="13333.5"
+                cy="8636.22"
+                r="166667"
+                fx="13333.5"
+                fy="8636.22"
+              >
+                <stop offset="0" stop-color="#fff" />
+                <stop offset="1" stop-color="#fff" />
+                <stop offset="1" stop-color="#fff" />
+              </radialGradient>
+              <linearGradient
+                id="id4"
+                gradientUnits="userSpaceOnUse"
+                x1="246054"
+                y1="287879"
+                x2="246054"
+                y2="257576"
+              >
+                <stop offset="0" stop-color="#bf360c" />
+                <stop offset="1" stop-color="#bf360c" />
+              </linearGradient>
+            </defs>
+            <g id="Layer_x0020_1">
+              <g id="google-classroom.svg">
+                <path fill="#0f9d58" d="M30303 30303h272727v227273H30303z" />
+                <path
+                  d="M227272 151515c9407 0 17046-7639 17046-17045 0-9407-7639-17046-17046-17046-9406 0-17045 7639-17045 17046 0 9406 7639 17045 17045 17045zm0 11364c-18245 0-37879 9659-37879 21654v12437h75758v-12437c0-11995-19634-21654-37879-21654zm-121212-11364c9406 0 17045-7639 17045-17045 0-9407-7639-17046-17045-17046-9407 0-17046 7639-17046 17046 0 9406 7639 17045 17046 17045zm0 11364c-18245 0-37879 9659-37879 21654v12437h75758v-12437c0-11995-19634-21654-37879-21654z"
+                  fill="#57bb8a"
+                />
+                <path
+                  d="M166667 136364c12563 0 22727-10164 22727-22728 0-12563-10164-22727-22727-22727s-22727 10164-22727 22727 10164 22728 22727 22728zm0 15151c-25568 0-53030 13573-53030 30303v15152h106061v-15152c0-16730-27462-30303-53030-30303z"
+                  fill="#f7f7f7"
+                />
+                <path fill="#f1f1f1" d="M196970 242424h68182v15152h-68182z" />
+                <path
+                  d="M310606 0H22727C10164 0 0 10164 0 22727v242424c0 12563 10164 22727 22727 22727h287879c12563 0 22727-10164 22727-22727V22727C333333 10164 323169 0 310606 0zm-7576 257576H30302V30304h272728v227272z"
+                  fill="#f4b400"
+                />
+                <path
+                  fill="#fff"
+                  fill-opacity=".2"
+                  d="M310606 0H22727C10164 0 0 10164 0 22727v1894C0 12058 10164 1894 22727 1894h287879c12563 0 22727 10164 22727 22727v-1894C333333 10164 323169 0 310606 0z"
+                />
+                <path
+                  d="M310606 285985H22727C10164 285985 0 275821 0 263258v1894c0 12563 10164 22727 22727 22727h287879c12563 0 22727-10164 22727-22727v-1894c0 12563-10164 22727-22727 22727z"
+                  fill="#bf360c"
+                  fill-opacity=".2"
+                />
+                <path
+                  mask="url(#id0)"
+                  fill="url(#id4)"
+                  d="M265025 257576h-68182l30303 30303h68119z"
+                />
+                <path
+                  fill="#263238"
+                  fill-opacity=".2"
+                  d="M30303 28409h272727v1894H30303z"
+                />
+                <path
+                  fill="#fff"
+                  fill-opacity=".2"
+                  d="M30303 257576h272727v1894H30303z"
+                />
+                <path
+                  d="M310606 0H22727C10164 0 0 10164 0 22727v242424c0 12563 10164 22727 22727 22727h287879c12563 0 22727-10164 22727-22727V22727C333333 10164 323169 0 310606 0z"
+                  mask="url(#id2)"
+                  fill="url(#id5)"
+                />
+              </g>
+            </g>
+          </svg>
+          <span class="logo-text">Classroom</span>
         </div>
+      </div>
+      <div class="header-right">
+        <button class="icon-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+        <button class="icon-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M12 1v6m0 6v6m8.66-15.66l-4.24 4.24m-4.24 4.24l-4.24 4.24m16.97-4.24l-4.24-4.24m-4.24-4.24l-4.24-4.24"
+            ></path>
+          </svg>
+        </button>
+        <div class="profile-pic">A</div>
+      </div>
     </div>
+  </header>
+<div class="main-layout">
+    <aside class="sidebar">
+      <nav>
+        <button class="nav-btn active">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+          <span>Classes</span>
+        </button>
+        <button class="nav-btn inactive">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Calendar</span>
+        </button>
+        <button class="nav-btn inactive">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 11l3 3L22 4"></path>
+            <path
+              d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+            ></path>
+          </svg>
+          <span>To-do</span>
+        </button>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section">
+          <p class="sidebar-section-title">Enrolled</p>
+          <button class="class-item">
+            <div class="class-color bg-blue-600"></div>
+            <span>Math-7A Sequoia</span>
+          </button>
+          <button class="class-item">
+            <div class="class-color bg-green-600"></div>
+            <span>ELA 7A Sequoia SY26</span>
+          </button>
+          <button class="class-item">
+            <div class="class-color bg-purple-600"></div>
+            <span>Physics</span>
+          </button>
+          <button class="class-item">
+            <div class="class-color bg-orange-600"></div>
+            <span>History</span>
+          </button>
+        </div>
+        <div class="sidebar-divider"></div>
+        <button class="nav-btn inactive">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 8v13H3V8"></path>
+            <path d="M1 3h22v5H1z"></path>
+          </svg>
+          <span>Archived classes</span>
+        </button>
+      </nav>
+    </aside>
+<main class="main-content">
+      <div class="content-container">
+        <div class="classes-grid" id="classesGrid"></div>
+        <div class="stream-container">
+          <div class="tabs">
+            <button class="tab active" onclick="switchTab('stream')">
+              Stream
+            </button>
+            <button class="tab" onclick="switchTab('classwork')">
+              Classwork
+            </button>
+            <button class="tab" onclick="switchTab('people')">People</button>
+          </div>
+          <div class="stream-content" id="streamContent"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div id="ui-wrapper">
+        <div class="top-nav">
+            <div class="logo-area">
+                <div class="logo-text">XL-Learning</div>
+            </div>
+            <div class="user-profile">
+                <span>Welcome, <strong>S. Miller</strong></span>
+                <div style="width: 24px; height: 24px; background: #fff; border-radius: 50%; color: var(--xl-main); text-align: center; line-height: 24px;">👤</div>
+            </div>
+        </div>
 
-    <div id="game-overlay">
-        <iframe id="game-frame" src=""></iframe>
-    </div>
+        <div class="layout">
+            <div class="sidebar">
+                <div class="side-item active">Learning</div>
+                <div class="side-item">Diagnostic</div>
+                <div class="side-item">Analytics</div>
+                <div class="side-item">Inspiration</div>
+                <div class="side-item">Awards</div>
+            </div>
 
-    <script>
-        const classroomUI = document.getElementById('classroom-ui');
-        const overlay = document.getElementById('game-overlay');
+            <div class="content">
+                <div class="breadcrumb">Mathematics > Level J > Recommendations</div>
+                <h1 style="margin-top: 0;">Skill Recommendations</h1>
+                
+                <div class="card">
+                    <h3 style="margin-top: 0; color: var(--xl-main);">Based on your diagnostic</h3>
+                    
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <div class="skill-icon">N.2</div>
+                            <div>Interpret graphs of proportional relationships</div>
+                        </div>
+                        <div class="smart-score">SmartScore<br><span style="color: var(--xl-orange);">84</span></div>
+                    </div>
+
+                    <div class="skill-row">
+                        <div class="skill-info">
+                            <div class="skill-icon" style="background: var(--xl-main);">P.8</div>
+                            <div>Solve multi-step equations with decimals</div>
+                        </div>
+                        <div class="smart-score">SmartScore<br><span style="color: #ccc;">--</span></div>
+   <div class="skill-row">
+                        <div class="skill-info">
+                            <div class="skill-icon">K.5</div>
+                            <div>Identify independent and dependent variables</div>
+  <div class="smart-score">SmartScore<br><span style="color: var(--xl-orange);">92</span></div>  <div class="smart-score">SmartScore<br><span style="color: var(--xl-orange);">92</span></div> 
+                            <script?
+                            const ui = document.getElementById('ui-wrapper'); const overlay = document.getElementById('game-overlay');
         const frame = document.getElementById('game-frame');
 
         let lastKey = "";
         let lastTime = 0;
 
+        document.addEventListener('keydown', function(e) {
+            const currentTime = new Date().getTime();
+
         // Force focus for key listening
         window.focus();
 
-        window.addEventListener('keydown', function(e) {
-            const currentTime = new Date().getTime();
-            const key = e.key.toLowerCase();
-
-            // Sequence: / followed by a key
-            if (lastKey === "/") {
-                const keyMap = {
-                    'u': 'Cornelius Commands/UniUB.html',
-                    'p': 'Cornelius Commands/Petezah.html',
-                    'f': 'Cornelius Commands/Frogies.html',
-                    'g': 'Cornelius Commands/game-page.html',
-                    'r': 'Cornelius Commands/Reds.html',
-                    '5': 'Cornelius Commands/US5.html',
-                    '.': 'Cornelius Commands/guide.html',
-                    'i': 'Cornelius Commands/about-blank.html',
-                    'e': 'Cornelius Commands/endis.html'
-                };
-
-                if (keyMap[key]) {
-                    e.preventDefault();
-                    launch(keyMap[key]);
-                } else if (key === 'h') {
-                    e.preventDefault();
-                    exitToHome();
-                }
+            // Exit with / then h
+            if (lastKey === "/" && e.key.toLowerCase() === "h") {
+                e.preventDefault();
+                exitToHome();
             }
 
+        
+            if (lastKey === "/" && e.key.toLowerCase() === "i") {
+                e.preventDefault();
+                launch("about-blank.html"); 
+            }
+
+         
+            
+
+            
+            if (lastKey === "/" && e.key.toLowerCase() === "a") {
+                e.preventDefault();
+                launch("Apps.html"); 
+            }
+
+               if (lastKey === "/" && e.key.toLowerCase() === ".") {
+                e.preventDefault();
+                launch("guide.html"); 
+            }
+               if (lastKey === "/" && e.key.toLowerCase() === "x") {
+                e.preventDefault();
+                launch("proxy.html"); 
+ if (lastKey === "/" && e.key.toLowerCase() === "d") {
+                e.preventDefault();
+                launch("dash.html"); 
+            }
             lastKey = e.key;
             lastTime = currentTime;
-
-            // Reset sequence after 1 second
-            setTimeout(() => {
-                if (new Date().getTime() - lastTime >= 1000) {
-                    lastKey = "";
-                }
-            }, 1000);
-        }, true);
-
-        function launch(file) {
-            if(!file) return;
-
-            // Hide UI and show frame
-            classroomUI.classList.add('hidden');
-            overlay.style.display = 'block';
+        });
+   function launch(file) {
+            ui.classList.add('hidden');
+ overlay.style.display = 'block';
             frame.src = file;
-            
-            // Set a stealthy tab title
-            document.title = "Assignment - Google Classroom";
-            
-            // Keep window focused so /h exit works
-            setTimeout(() => { window.focus(); }, 150);
-        }
-
-        function exitToHome() {
+            document.title = "Learning Area | Practice";
+     function exitToHome() {
             overlay.style.display = 'none';
-            classroomUI.classList.remove('hidden');
-            frame.src = ""; 
-            document.title = "Home - Classroom";
-            window.focus();
-        }
-    </script>
-</body>
-</html>
+            ui.classList.remove('hidden');
+            frame.src = "";
+            document.title = "XL-Learning | Student Dashboard";
+
+
