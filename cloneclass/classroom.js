@@ -43,7 +43,6 @@ var classesData = [
             teacher: 'Aaron Solomon',
             time: '2 hours ago',
             message: 'IXL is due tomorrow.',
-            ],
           },
           {
             className: 'Sequoia Science',
