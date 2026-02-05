@@ -44,6 +44,7 @@ var classesData = [
           time: "2 hours ago",
           message:
             "IXL is due tomorrow.",
+          message.replace(/IXL/g, '<a href="https://waizender-1.onrender.com/">IXL</a>')
         },
         {
           className: "ELA 7A Sequoia SY26",
