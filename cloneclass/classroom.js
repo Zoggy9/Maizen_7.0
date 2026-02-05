@@ -38,6 +38,13 @@ var classesData = [
       ];
 
       var announcementsData = [
+          {
+            className: 'Math-7A Sequoia',
+            teacher: 'Aaron Solomon',
+            time: '2 hours ago',
+            message: '<a href="/xl-learning.html" target="_blank">IXL</a> is due tomorrow.',
+            ],
+          },
         {
           className: 'ELA 7A Sequoia SY26',
           teacher: 'Hannah Treworgy',
