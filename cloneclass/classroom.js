@@ -49,7 +49,6 @@ var classesData = [
             teacher: 'Lyn Rothenheber',
             time: '5 days ago',
             message: 'Finish reading sections 1-5 (stop at 5) in Chapter 15 of your textbook by Friday. Questions due monday',
-            ],
           },
         {
           className: 'ELA 7A Sequoia SY26',
