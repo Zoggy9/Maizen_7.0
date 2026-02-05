@@ -163,7 +163,7 @@ function renderAnnouncements() {
       ann.message
             ann.message
             .replace(/IXL/g, '<a href="/xl-learning.html" target="_blank">IXL</a>')
-            .replace(/textbook/g, '<a href="https://ewufweufc.onrender.com" target="_blank">MLA format</a>')+
+            .replace(/textbook/g, '<a href="https://ewufweufc.onrender.com" target="_blank">textbook</a>')+
       "</p></div></div>";
     content.appendChild(div);
   }
