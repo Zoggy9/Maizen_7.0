@@ -38,20 +38,6 @@ var classesData = [
       ];
 
       var announcementsData = [
-          {
-            className: 'Math-7A Sequoia',
-            teacher: 'Aaron Solomon',
-            time: '2 hours ago',
-            message: '<a href="/xl-learning.html" target="_blank">IXL</a> is due tomorrow.',
-            ],
-          },
-          {
-            className: 'Sequoia Science',
-            teacher: 'Lyn Rothenheber',
-            time: '5 days ago',
-            message: 'Finish reading sections 1-5 in <a href="https://ewufweufc.onrender.com" target="_blank">Chapter 15 of your textbook</a> by Friday.',
-            ],
-          },
         {
           className: 'ELA 7A Sequoia SY26',
           teacher: 'Hannah Treworgy',
