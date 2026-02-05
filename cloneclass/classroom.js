@@ -42,7 +42,14 @@ var classesData = [
             className: 'Math-7A Sequoia',
             teacher: 'Aaron Solomon',
             time: '2 hours ago',
-            message: '<a href="/xl-learning.html" target="_blank">IXL</a> is due tomorrow.',
+            message: 'IXL is due tomorrow.',
+            ],
+          },
+          {
+            className: 'Sequoia Science',
+            teacher: 'Lyn Rothenheber',
+            time: '5 days ago',
+            message: 'Finish reading sections 1-5 (stop at 5) in Chapter 15 of your textbook by Friday. Questions due monday',
             ],
           },
         {
@@ -137,27 +144,30 @@ var classesData = [
         }
       }
 
-      function renderAnnouncements() {
-        var content = document.getElementById("streamContent");
-        for (var i = 0; i < announcementsData.length; i++) {
-          var ann = announcementsData[i];
-          var div = document.createElement("div");
-          div.className = "announcement";
-          div.innerHTML =
-            '<div class="announcement-header"><div class="announcement-avatar">' +
-            ann.teacher.charAt(0) +
-            '</div><div class="announcement-info"><div class="announcement-meta"><span class="announcement-teacher">' +
-            ann.teacher +
-            '</span><span class="announcement-time">• ' +
-            ann.time +
-            '</span></div><p class="announcement-class">' +
-            ann.className +
-            '</p><p class="announcement-message">' +
-            ann.message +
-            "</p></div></div>";
-          content.appendChild(div);
-        }
-      }
+function renderAnnouncements() {
+  var content = document.getElementById("streamContent");
+  for (var i = 0; i < announcementsData.length; i++) {
+    var ann = announcementsData[i];
+    var div = document.createElement("div");
+    div.className = "announcement";
+    div.innerHTML =
+      '<div class="announcement-header"><div class="announcement-avatar">' +
+      ann.teacher.charAt(0) +
+      '</div><div class="announcement-info"><div class="announcement-meta"><span class="announcement-teacher">' +
+      ann.teacher +
+      '</span><span class="announcement-time">• ' +
+      ann.time +
+      '</span></div><p class="announcement-class">' +
+      ann.className +
+      '</p><p class="announcement-message">' +
+      ann.message
+            ann.message
+            .replace(/IXL/g, '<a href="/xl-learning.html" target="_blank">IXL</a>')
+            .replace(/textbook/g, '<a href="https://ewufweufc.onrender.com" target="_blank">MLA format</a>')+
+      "</p></div></div>";
+    content.appendChild(div);
+  }
+}
 
       function switchTab(tabName) {
         var tabs = document.querySelectorAll(".tab");
