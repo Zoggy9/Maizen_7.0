@@ -18,6 +18,13 @@
 
 a {
   color: rgb(140, 255, 159);
+  display: block;
+  text-align: center;
+  margin: 10px;
+  background-color: black;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
 }
 
 body {
@@ -26,8 +33,3 @@ body {
   background-size: 100% 100%; /* Ensures the image covers the entire background */
   background-attachment: fixed; /* Keeps the background image fixed during scrolling */
         }
-
-button {
-  border-radius: 10px;
-  background-color: black;
-}
