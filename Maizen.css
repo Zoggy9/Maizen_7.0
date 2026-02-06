@@ -27,6 +27,11 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: black;
+  background-color: yellow;
+}
+
 body {
   background-image: url('https://assets.bonappetit.com/photos/5d2749d767286b00089ebc15/4:3/w_1772,h_1329,c_limit/Basically-Corn-Macro.jpg'); /* Replace with your image path */
   background-repeat: no-repeat; /* Prevents the image from repeating */
