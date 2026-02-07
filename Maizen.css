@@ -8,9 +8,7 @@
 }
 
 .links {
-  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   text-align: center;
   font-size: large;
   font-weight: bold;
